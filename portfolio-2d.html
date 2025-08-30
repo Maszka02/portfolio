@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 2D | Moje Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Nawigacja -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Moje Portfolio</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Strona Główna</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio-3d.html" class="nav-link">Portfolio 3D</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio-2d.html" class="nav-link active">Portfolio 2D</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html" class="nav-link">Kontakt</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sekcja główna -->
+    <main>
+        <section class="portfolio-header">
+            <div class="container">
+                <h1>Portfolio 2D</h1>
+                <p>Moje prace dwuwymiarowe - ilustracje, grafiki i projekty</p>
+            </div>
+        </section>
+
+        <!-- Galeria 2D -->
+        <section class="portfolio-gallery">
+            <div class="container">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Wszystkie</button>
+                    <button class="filter-btn" data-filter="illustration">Ilustracje</button>
+                    <button class="filter-btn" data-filter="graphic-design">Grafika</button>
+                    <button class="filter-btn" data-filter="concept-art">Concept art</button>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="illustration">
+                        <img src="https://placehold.co/400x300" alt="Projekt 2D 1">
+                        <div class="gallery-item-content">
+                            <h3>Ilustracja książkowa</h3>
+                            <p>Ilustracja do powieści fantasy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="graphic-design">
+                        <img src="https://placehold.co/400x300" alt="Projekt 2D 2">
+                        <div class="gallery-item-content">
+                            <h3>Projekt logo</h3>
+                            <p>Logo dla firmy technologicznej</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="concept-art">
+                        <img src="https://placehold.co/400x300" alt="Projekt 2D 3">
+                        <div class="gallery-item-content">
+                            <h3>Concept art postaci</h3>
+                            <p>Projekt bohatera do gry komputerowej</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="illustration">
+                        <img src="https://placehold.co/400x300" alt="Projekt 2D 4">
+                        <div class="gallery-item-content">
+                            <h3>Ilustracja reklamowa</h3>
+                            <p>Ilustracja na potrzeby kampanii marketingowej</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="graphic-design">
+                        <img src="https://placehold.co/400x300" alt="Projekt 2D 5">
+                        <div class="gallery-item-content">
+                            <h3>Projekt opakowania</h3>
+                            <p>Design opakowania produktu spożywczego</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="concept-art">
+                        <img src="https://placehold.co/400x300" alt="Projekt 2D 6">
+                        <div class="gallery-item-content">
+                            <h3>Concept art środowiska</h3>
+                            <p>Projekt lokacji do gry indie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Stopka -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Moje Portfolio Artystyczne. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
