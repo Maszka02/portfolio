@@ -1,103 +1,24 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | Moje Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Nawigacja -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Moje Portfolio</a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Strona Główna</a>
-                </li>
-                <li class="nav-item">
-                    <a href="portfolio-3d.html" class="nav-link">Portfolio 3D</a>
-                </li>
-                <li class="nav-item">
-                    <a href="portfolio-2d.html" class="nav-link">Portfolio 2D</a>
-                </li>
-                <li class="nav-item">
-                    <a href="kontakt.html" class="nav-link active">Kontakt</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Sekcja główna -->
-    <main>
-        <section class="contact-header">
-            <div class="container">
-                <h1>Kontakt</h1>
-                <p>Skontaktuj się ze mną w sprawie współpracy lub pytań</p>
-            </div>
-        </section>
-
-        <!-- Formularz kontaktowy -->
-        <section class="contact-form-section">
-            <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <h2>Dane kontaktowe</h2>
-                        <p><strong>Email:</strong> przyklad@email.com</p>
-                        <p><strong>Telefon:</strong> +48 123 456 789</p>
-                        <p><strong>Adres:</strong> ul. Przykładowa 1, 00-000 Warszawa</p>
-                        
-                        <div class="social-links">
-                            <a href="#" class="social-link">Instagram</a>
-                            <a href="#" class="social-link">ArtStation</a>
-                            <a href="#" class="social-link">Behance</a>
-                            <a href="#" class="social-link">LinkedIn</a>
-                        </div>
-                    </div>
-                    
-                    <form class="contact-form">
-                        <h2>Wyślij wiadomość</h2>
-                        <div class="form-group">
-                            <label for="name">Imię i nazwisko</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Temat</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Wiadomość</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Stopka -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2023 Moje Portfolio Artystyczne. Wszelkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<form action="https://formspree.io/f/mqadqzdg" method="POST" class="contact-form">
+    <h2>Wyślij wiadomość</h2>
+    <div class="form-group">
+        <label for="name">Imię i nazwisko</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="subject">Temat</label>
+        <input type="text" id="subject" name="subject" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Wiadomość</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
+</form>
