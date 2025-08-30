@@ -1,98 +1,102 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio 3D - Twoje Imię</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #f0f0f0;
-    }
-    header {
-      padding: 20px;
-      text-align: center;
-      background: #222;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    nav a {
-      color: #f0f0f0;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .project {
-      background: #222;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .project:hover {
-      transform: scale(1.05);
-    }
-    .project img {
-      width: 100%;
-      display: block;
-    }
-    .project h3 {
-      margin: 10px 0;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Artystyczne</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <h1>Twoje Imię - Portfolio 3D</h1>
-    <nav>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#kontakt">Kontakt</a>
+    <!-- Nawigacja -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Moje Portfolio</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Strona Główna</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio-3d.html" class="nav-link">Portfolio 3D</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio-2d.html" class="nav-link">Portfolio 2D</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html" class="nav-link">Kontakt</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <section id="portfolio" class="portfolio">
-    <div class="project">
-      <img src="render1.jpg" alt="Projekt 1">
-      <h3>Nazwa projektu 1</h3>
-    </div>
-    <div class="project">
-      <img src="render2.jpg" alt="Projekt 2">
-      <h3>Nazwa projektu 2</h3>
-    </div>
-    <div class="project">
-      <img src="render3.jpg" alt="Projekt 3">
-      <h3>Nazwa projektu 3</h3>
-    </div>
-  </section>
+    <!-- Sekcja główna -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Witaj w moim portfolio artystycznym</h1>
+                <p>Odkryj moje prace w dziedzinach 2D i 3D</p>
+                <div class="hero-buttons">
+                    <a href="portfolio-2d.html" class="btn">Portfolio 2D</a>
+                    <a href="portfolio-3d.html" class="btn btn-primary">Portfolio 3D</a>
+                </div>
+            </div>
+        </section>
 
-  <section id="kontakt" style="padding: 20px; text-align: center;">
-    <h2>Kontakt</h2>
-    <p>Email: <a href="mailto:twojemail@example.com" style="color: #f0f0f0;">twojemail@example.com</a></p>
-    <p>LinkedIn / ArtStation / Inne linki</p>
-  </section>
+        <!-- Sekcja o mnie -->
+        <section class="about">
+            <div class="container">
+                <h2>O mnie</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Cześć! Jestem artystą specjalizującym się w grafice 2D i 3D. Moja pasja do tworzenia rozpoczęła się wiele lat temu i ciągle rozwijam swoje umiejętności.</p>
+                        <p>W moim portfolio znajdziesz różnorodne projekty, od ilustracji 2D po zaawansowane modele 3D. Każda praca to część mojej artystycznej podróży.</p>
+                        <a href="portfolio-2d.html" class="btn">Zobacz moje prace</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://placehold.co/400x400" alt="Moje zdjęcie">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    &copy; 2025 Twoje Imię
-  </footer>
+        <!-- Sekcja najnowsze prace -->
+        <section class="latest-works">
+            <div class="container">
+                <h2>Najnowsze prace</h2>
+                <div class="works-grid">
+                    <div class="work-item">
+                        <img src="https://placehold.co/300x200" alt="Projekt 1">
+                        <h3>Tytuł projektu 1</h3>
+                        <p>Krótki opis projektu</p>
+                    </div>
+                    <div class="work-item">
+                        <img src="https://placehold.co/300x200" alt="Projekt 2">
+                        <h3>Tytuł projektu 2</h3>
+                        <p>Krótki opis projektu</p>
+                    </div>
+                    <div class="work-item">
+                        <img src="https://placehold.co/300x200" alt="Projekt 3">
+                        <h3>Tytuł projektu 3</h3>
+                        <p>Krótki opis projektu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <!-- Stopka -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Moje Portfolio Artystyczne. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-d
