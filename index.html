@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio 3D - Twoje Imię</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f0f0f0;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #222;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    nav a {
+      color: #f0f0f0;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .project {
+      background: #222;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .project:hover {
+      transform: scale(1.05);
+    }
+    .project img {
+      width: 100%;
+      display: block;
+    }
+    .project h3 {
+      margin: 10px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Twoje Imię - Portfolio 3D</h1>
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <section id="portfolio" class="portfolio">
+    <div class="project">
+      <img src="render1.jpg" alt="Projekt 1">
+      <h3>Nazwa projektu 1</h3>
+    </div>
+    <div class="project">
+      <img src="render2.jpg" alt="Projekt 2">
+      <h3>Nazwa projektu 2</h3>
+    </div>
+    <div class="project">
+      <img src="render3.jpg" alt="Projekt 3">
+      <h3>Nazwa projektu 3</h3>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding: 20px; text-align: center;">
+    <h2>Kontakt</h2>
+    <p>Email: <a href="mailto:twojemail@example.com" style="color: #f0f0f0;">twojemail@example.com</a></p>
+    <p>LinkedIn / ArtStation / Inne linki</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Twoje Imię
+  </footer>
+
+</body>
+</html>
+d
