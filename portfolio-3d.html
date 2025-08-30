@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 3D | Moje Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Nawigacja -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Moje Portfolio</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Strona Główna</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio-3d.html" class="nav-link active">Portfolio 3D</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio-2d.html" class="nav-link">Portfolio 2D</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html" class="nav-link">Kontakt</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sekcja główna -->
+    <main>
+        <section class="portfolio-header">
+            <div class="container">
+                <h1>Portfolio 3D</h1>
+                <p>Moje prace w trójwymiarze - modele, animacje i wizualizacje</p>
+            </div>
+        </section>
+
+        <!-- Galeria 3D -->
+        <section class="portfolio-gallery">
+            <div class="container">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Wszystkie</button>
+                    <button class="filter-btn" data-filter="modeling">Modelowanie</button>
+                    <button class="filter-btn" data-filter="animation">Animacja</button>
+                    <button class="filter-btn" data-filter="visualization">Wizualizacja</button>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="modeling">
+                        <img src="https://placehold.co/400x300" alt="Projekt 3D 1">
+                        <div class="gallery-item-content">
+                            <h3>Model postaci</h3>
+                            <p>Pełny model 3D postaci z teksturami</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="animation">
+                        <img src="https://placehold.co/400x300" alt="Projekt 3D 2">
+                        <div class="gallery-item-content">
+                            <h3>Animacja walki</h3>
+                            <p>Animacja ruchu postaci w walce</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="visualization">
+                        <img src="https://placehold.co/400x300" alt="Projekt 3D 3">
+                        <div class="gallery-item-content">
+                            <h3>Wizualizacja architektoniczna</h3>
+                            <p>Renderowanie wnętrza mieszkalnego</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="modeling">
+                        <img src="https://placehold.co/400x300" alt="Projekt 3D 4">
+                        <div class="gallery-item-content">
+                            <h3>Model pojazdu</h3>
+                            <p>Samochód przyszłości - model high poly</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="animation">
+                        <img src="https://placehold.co/400x300" alt="Projekt 3D 5">
+                        <div class="gallery-item-content">
+                            <h3>Animacja produktu</h3>
+                            <p>Pokaz produktu z różnych perspektyw</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="visualization">
+                        <img src="https://placehold.co/400x300" alt="Projekt 3D 6">
+                        <div class="gallery-item-content">
+                            <h3>Wizualizacja krajobrazu</h3>
+                            <p>Środowisko naturalne z zaawansowanym oświetleniem</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Stopka -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Moje Portfolio Artystyczne. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
