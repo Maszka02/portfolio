@@ -4,7 +4,331 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio 3D | Moje Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset i podstawowe style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Nawigacja */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo a {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 30px;
+        }
+
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #4a90e2;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Nagłówek portfolio */
+        .portfolio-header {
+            padding: 100px 0 50px;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .portfolio-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Filtry galerii */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: #fff;
+            border: 2px solid #4a90e2;
+            color: #4a90e2;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #4a90e2;
+            color: #fff;
+        }
+
+        /* Galeria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-item-content {
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .gallery-item-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .gallery-item-content p {
+            color: #666;
+        }
+
+        /* Stopka */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            animation: modalopen 0.4s;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .modal-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .modal-details h3 {
+            margin-bottom: 15px;
+            color: #4a90e2;
+        }
+
+        .modal-details p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-meta {
+            margin-top: 20px;
+        }
+
+        .meta-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .meta-item strong {
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        /* Responsywność */
+        @media screen and (max-width: 968px) {
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #fff;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Nawigacja -->
@@ -55,7 +379,7 @@
                 </div>
                 
                 <div class="gallery-grid">
-                    <div class="gallery-item" data-category="modeling">
+                    <div class="gallery-item" data-category="modeling" data-id="1">
                         <img src="https://placehold.co/400x300" alt="Projekt 3D 1">
                         <div class="gallery-item-content">
                             <h3>Model postaci</h3>
@@ -63,7 +387,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="animation">
+                    <div class="gallery-item" data-category="animation" data-id="2">
                         <img src="https://placehold.co/400x300" alt="Projekt 3D 2">
                         <div class="gallery-item-content">
                             <h3>Animacja walki</h3>
@@ -71,7 +395,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="visualization">
+                    <div class="gallery-item" data-category="visualization" data-id="3">
                         <img src="https://placehold.co/400x300" alt="Projekt 3D 3">
                         <div class="gallery-item-content">
                             <h3>Wizualizacja architektoniczna</h3>
@@ -79,7 +403,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="modeling">
+                    <div class="gallery-item" data-category="modeling" data-id="4">
                         <img src="https://placehold.co/400x300" alt="Projekt 3D 4">
                         <div class="gallery-item-content">
                             <h3>Model pojazdu</h3>
@@ -87,7 +411,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="animation">
+                    <div class="gallery-item" data-category="animation" data-id="5">
                         <img src="https://placehold.co/400x300" alt="Projekt 3D 5">
                         <div class="gallery-item-content">
                             <h3>Animacja produktu</h3>
@@ -95,7 +419,7 @@
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="visualization">
+                    <div class="gallery-item" data-category="visualization" data-id="6">
                         <img src="https://placehold.co/400x300" alt="Projekt 3D 6">
                         <div class="gallery-item-content">
                             <h3>Wizualizacja krajobrazu</h3>
@@ -114,6 +438,189 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Modal do wyświetlania szczegółów projektu -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Tytuł projektu</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Obraz projektu">
+                </div>
+                <div class="modal-details">
+                    <h3>O projekcie</h3>
+                    <p id="modalDescription">Opis projektu pojawi się tutaj.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <strong>Kategoria:</strong> <span id="modalCategory"></span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Data realizacji:</strong> <span id="modalDate"></span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Narzędzia:</strong> <span id="modalTools"></span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Klient:</strong> <span id="modalClient"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Menu mobilne
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+        // Filtrowanie galerii
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                // Usuń aktywną klasę z wszystkich przycisków
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+                // Dodaj aktywną klasę do klikniętego przycisku
+                button.classList.add("active");
+                
+                const filter = button.getAttribute("data-filter");
+                
+                galleryItems.forEach(item => {
+                    if (filter === "all" || item.getAttribute("data-category") === filter) {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
+        });
+
+        // Modal do szczegółów projektu
+        const modal = document.getElementById("projectModal");
+        const closeModal = document.querySelector(".close-modal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalImage = document.getElementById("modalImage");
+        const modalDescription = document.getElementById("modalDescription");
+        const modalCategory = document.getElementById("modalCategory");
+        const modalDate = document.getElementById("modalDate");
+        const modalTools = document.getElementById("modalTools");
+        const modalClient = document.getElementById("modalClient");
+
+        // Dane projektów (w prawdziwym zastosowaniu można pobierać z API)
+        const projectsData = {
+            "1": {
+                title: "Model postaci",
+                image: "https://placehold.co/600x400",
+                description: "Pełny model 3D fantasyjnej postaci z zaawansowanym riggingiem i teksturami. Postać została stworzona do gry indie, z optymalizacją pod kątem wydajności. Zawiera 15 różnych ekspresji twarzy i możliwość customizacji elementów ubioru.",
+                category: "Modelowanie",
+                date: "Czerwiec 2023",
+                tools: "Blender, Substance Painter, ZBrush",
+                client: "Studio GameDev"
+            },
+            "2": {
+                title: "Animacja walki",
+                image: "https://placehold.co/600x400",
+                description: "Kompleksowa animacja walki wręcz dla głównego bohatera gry. Zawiera 8 różnych kombinacji ciosów, płynne przejścia między animacjami i reakcje na trafienia. Animacja została zoptymalizowana pod kątem silnika Unity.",
+                category: "Animacja",
+                date: "Sierpień 2023",
+                tools: "Maya, Unity",
+                client: "Action Games Inc."
+            },
+            "3": {
+                title: "Wizualizacja architektoniczna",
+                image: "https://placehold.co/600x400",
+                description: "Fotorealistyczna wizualizacja nowoczesnego apartamentowca z uwzględnieniem otoczenia i różnych warunków oświetleniowych. Projekt zawiera renderowania dzienne, nocne i poranne oraz wirtualny spacer 360°.",
+                category: "Wizualizacja",
+                date: "Maj 2023",
+                tools: "3ds Max, V-Ray, Photoshop",
+                client: "Architektura Plus"
+            },
+            "4": {
+                title: "Model pojazdu",
+                image: "https://placehold.co/600x400",
+                description: "High-poly model koncepcyjnego pojazdu terenowego przyszłości. Model zawiera animowane elementy (drzwi, koła, system zawieszenia) i został przystosowany do użytku w silnikach gier. Tekstury PBR z zaawansowanymi materiałami.",
+                category: "Modelowanie",
+                date: "Lipiec 2023",
+                tools: "Blender, Substance Painter",
+                client: "FutureTech Motors"
+            },
+            "5": {
+                title: "Animacja produktu",
+                image: "https://placehold.co/600x400",
+                description: "Animacja prezentująca nowy model smartfona z możliwością interaktywnego obracania i podświetlania kluczowych funkcji. Animacja zawiera zbliżenia na najważniejsze elementy i została zrenderowana w 4K.",
+                category: "Animacja",
+                date: "Wrzesień 2023",
+                tools: "Cinema 4D, Redshift",
+                client: "TechBrand"
+            },
+            "6": {
+                title: "Wizualizacja krajobrazu",
+                image: "https://placehold.co/600x400",
+                description: "Cyfrowa rekonstrukcja prehistorycznego krajobrazu z dinozaurami dla muzeum historii naturalnej. Projekt zawiera animowane elementy (poruszające się dinozaury, zmieniające się światło) i został wyrenderowany w 8K dla wyświetlacza panoramicnego.",
+                category: "Wizualizacja",
+                date: "Kwiecień 2023",
+                tools: "Blender, Unreal Engine 5",
+                client: "Muzeum Historii Naturalnej"
+            }
+        };
+
+        // Otwieranie modalu po kliknięciu na element portfolio
+        galleryItems.forEach(item => {
+            item.addEventListener("click", () => {
+                const projectId = item.getAttribute("data-id");
+                const projectData = projectsData[projectId];
+                
+                if (projectData) {
+                    modalTitle.textContent = projectData.title;
+                    modalImage.src = projectData.image;
+                    modalImage.alt = projectData.title;
+                    modalDescription.textContent = projectData.description;
+                    modalCategory.textContent = projectData.category;
+                    modalDate.textContent = projectData.date;
+                    modalTools.textContent = projectData.tools;
+                    modalClient.textContent = projectData.client;
+                    
+                    modal.classList.add("show");
+                    document.body.style.overflow = "hidden"; // Zablokuj przewijanie strony
+                }
+            });
+        });
+
+        // Zamykanie modalu
+        closeModal.addEventListener("click", () => {
+            modal.classList.remove("show");
+            document.body.style.overflow = "auto"; // Odblokuj przewijanie strony
+        });
+
+        // Zamykanie modalu po kliknięciu poza jego obszarem
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.classList.remove("show");
+                document.body.style.overflow = "auto";
+            }
+        });
+
+        // Zamykanie modalu klawiszem Escape
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && modal.classList.contains("show")) {
+                modal.classList.remove("show");
+                document.body.style.overflow = "auto";
+            }
+        });
+    </script>
 </body>
 </html>
