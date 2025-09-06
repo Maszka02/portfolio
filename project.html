@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Artystyczne</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Nawigacja -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">Moje Portfolio</a>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Strona Główna</a></li>
+        <li class="nav-item"><a href="portfolio-3d.html" class="nav-link">Portfolio 3D</a></li>
+        <li class="nav-item"><a href="portfolio-2d.html" class="nav-link">Portfolio 2D</a></li>
+        <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="project-header">
+      <div class="container">
+        <a href="portfolio-3d.html" class="back-btn">← Powrót do portfolio</a>
+        <h1>Tytuł projektu</h1>
+        <p>Krótki opis projektu</p>
+      </div>
+    </section>
+
+    <section class="project-details">
+      <div class="container">
+        <img src="https://placehold.co/800x500" alt="Obraz projektu" />
+
+        <div class="project-info">
+          <h2>O projekcie</h2>
+          <p>Opis pojawi się tutaj.</p>
+
+          <div class="project-specs"></div>
+        </div>
+
+        <div class="project-gallery">
+          <h3>Więcej zdjęć</h3>
+          <div class="gallery"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 Moje Portfolio Artystyczne. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+  <script src="projects.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
